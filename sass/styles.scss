@@ -11,6 +11,7 @@ $accentTextColor: 			#625835;
 $textColor: 				#8f8f8f;
 $textColorDark: 			#272727;
 $lightGray: 				#cdcdcd;
+$lighterGray: 				#dedede;
 
 
 /* TYPOGRAPHY
@@ -27,6 +28,10 @@ p {
 	color: $textColor;
 
 	@include type-size(1.6, 2.4);
+
+	&.small {
+		@include type-size(1.3, 1.625);		
+	}
 }
 
 a {
@@ -72,6 +77,9 @@ section {
 	@include container(64em); // 1024px
 }
 
+.center {
+	text-align: center;
+}
 /* 
 ----------------------------------------------- */
 .button {
@@ -97,7 +105,7 @@ section {
 ----------------------------------------------- */
 .hero {
 	background: $accentColor;
-	@include px-to-rem(padding-bottom, 12);
+	@include px-to-rem(padding-bottom, 9);
 	@include px-to-rem(padding-top, 9);
 
 	img {
@@ -186,6 +194,7 @@ section {
 /* INFO
 ----------------------------------------------- */
 .info {
+	
 	.inner {
 		@include pre(1);
 		@include span(14 of 16);
@@ -237,13 +246,29 @@ section {
 	color: $lightGray;
 	text-transform: uppercase;
 
-	@include px-to-rem(margin-bottom, 6.3);
-	@include px-to-rem(margin-top, 6.3);
+	@include px-to-rem(margin-bottom, 9.6);
+	@include px-to-rem(margin-top, 7.8);
 	@extend %basic-animation;
 	@include type-size(1.3);
 
 	&:hover {
 		border-color: $accentTextColor;
 		color: $accentTextColor;
+	}
+}
+
+/* FOOTER
+----------------------------------------------- */
+footer {
+	background: $textColorDark;
+	display: inline-block;
+	width: 100%;
+
+	p {
+		letter-spacing: 0.02em;
+		opacity: .8;
+
+		@extend .center;
+		@extend .small;
 	}
 }
